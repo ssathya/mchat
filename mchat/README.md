@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+The M-CHAT-R can be administered and scored as part of a well-child care visit, and also can be used by specialists or other professionals to assess risk for ASD. The primary goal of the M-CHAT-R is to maximize sensitivity, meaning to detect as many cases of ASD as possible. Therefore, there is a high false positive rate, meaning that not all children who score at risk will be diagnosed with ASD. To address this, we have developed the Follow-Up questions (M-CHAT-R/F). Users should be aware that
+even with the Follow-Up, a significant number of the children who screen positive on the M-CHAT-R will not be diagnosed with ASD; however, these children are at high risk for other developmental disorders or delays, and therefore, evaluation is warranted for any child who screens positive. The M-CHAT-R can
+be scored in less than two minutes. Scoring instructions can be downloaded from http://www.mchatscreen.com. Associated documents will be available for download as well.

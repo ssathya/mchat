@@ -9,10 +9,10 @@ import {MatTabsModule} from '@angular/material/tabs';
   styleUrls: ['./qa-form.component.css']
 })
 export class QaFormComponent implements OnInit {
-  private questAndAns: QaTemplate[];
-  private answeredQuestions:number;
-  private showAlert : boolean;
-  private score : number;
+  public questAndAns: QaTemplate[];
+  public answeredQuestions:number;
+  public showAlert : boolean;
+  public score : number;
   constructor(formService:QaFormServiceService) {
     this.questAndAns=formService.BuildQA();
     this.answeredQuestions=0;
@@ -22,6 +22,7 @@ export class QaFormComponent implements OnInit {
 
    public radioChangeHandler(event: any){
      var id = event.target.id;
+     this.score=23;
      if (this.questAndAns[id].ResponseAnswer === Answers.Undefined){
       this.answeredQuestions++;
      }

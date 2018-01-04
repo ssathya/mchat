@@ -1,40 +1,3 @@
-<!-- <ul class="nav nav-tabs">
-  <li class="active">
-    <a href="#set1" data-toggle="tab">Set 1</a>
-  </li>
-  <li>
-    <a href="#set2" data-toggle="tab">Set 2</a>
-  </li>
-  <li>
-    <a href="#set3" data-toggle="tab">Set 3</a>
-  </li>
-  <li>
-    <a href="#set4" data-toggle="tab">Set 4</a>
-  </li>
-  <li>
-    <a href="#set5" data-toggle="tab">Set 5</a>
-  </li>
-</ul>
-<div class="tab-content">
-  <div id="set1" class="tab-pane fade in active">
-    "set 1"
-  </div>
-  <div id="set2" class="tab-pane fade">
-    "set 2"
-  </div>
-  <div id="set3" class="tab-pane fade">
-    "set 3"
-  </div>
-  <div id="set4" class="tab-pane fade">
-    "set 4"
-  </div>
-  <div id="set5" class="tab-pane fade">
-    "set 5"
-  </div>
-</div>
-
-<p>Next</p> -->
-
 <mat-tab-group>
   <mat-tab label="Set 1">
     <div class="col-xs-8"></div>
@@ -45,7 +8,7 @@
       <strong>&nbsp;&nbsp;No</strong>
     </div>
     <div *ngFor="let qa of questAndAns; let i=index;">
-      <div *ngIf="i<5" class="row small">
+      <div *ngIf="i<6" class="row small">
         <div class="col-xs-8">
           <strong>{{qa.Question}}</strong>
         </div>
@@ -71,7 +34,7 @@
       <strong>&nbsp;&nbsp;No</strong>
     </div>
     <div *ngFor="let qa of questAndAns; let i=index;">
-      <div *ngIf="i>=5 && i < 10" class="row small">
+      <div *ngIf="i>=6 && i < 12" class="row small">
         <div class="col-xs-8">
           <strong>{{qa.Question}}</strong>
         </div>
@@ -97,7 +60,7 @@
       <strong>&nbsp;&nbsp;No</strong>
     </div>
     <div *ngFor="let qa of questAndAns; let i=index;">
-      <div *ngIf="i>=10 && i < 15" class="row small">
+      <div *ngIf="i>=12 && i < 18" class="row small">
         <div class="col-xs-8">
           <strong>{{qa.Question}}</strong>
         </div>
@@ -123,33 +86,7 @@
       <strong>&nbsp;&nbsp;No</strong>
     </div>
     <div *ngFor="let qa of questAndAns; let i=index;">
-      <div *ngIf="i>=15 && i < 20" class="row small">
-        <div class="col-xs-8">
-          <strong>{{qa.Question}}</strong>
-        </div>
-        <div class="col-xs-2">
-          <label>
-            <input class="radio" type="radio" name={{i}} id={{i}} value="1" (change)="radioChangeHandler($event)">
-          </label>
-        </div>
-        <div class="col-xs-2">
-          <label>
-            <input class="radio" type="radio" name={{i}} id={{i}} value="0" (change)="radioChangeHandler($event)">
-          </label>
-        </div>
-      </div>
-    </div>
-  </mat-tab>
-  <mat-tab label="Set 5">
-    <div class="col-xs-8"></div>
-    <div class="col-xs-2 text-justify">
-      <strong>Yes</strong>
-    </div>
-    <div class="col-xs-2 text-justify">
-      <strong>&nbsp;&nbsp;No</strong>
-    </div>
-    <div *ngFor="let qa of questAndAns; let i=index;">
-      <div *ngIf="i>=20" class="row small">
+      <div *ngIf="i>=18" class="row small">
         <div class="col-xs-8">
           <strong>{{qa.Question}}</strong>
         </div>
@@ -167,23 +104,24 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+<br/>
 <div *ngIf="answeredQuestions === 23">
-    <button class="btn btn-default btn-xm" (click)="Evaluate()">Submit    
-      </button>
+  <button class="btn btn-primary btn-xm pull-right" (click)="Evaluate()">Submit
+  </button>
 </div>
+<br/><br/>
 <div *ngIf="score >=0 && score <=2" class="alert alert-success">
-<strong>Total score is 0-2</strong> if child is younger than 24 months, screen again after second
-birthday. No further action required unless surveillance indicates risk for ASD
+  <strong>Total score is 0-2</strong> if child is younger than 24 months, screen again after second birthday. No further action required
+  unless surveillance indicates risk for ASD
 </div>
 <div *ngIf="score >=3 && score <=7" class="alert alert-warning">
-  <strong>Total Score is 3-7</strong> Administer the Follow-Up (second stage of M-CHAT-R/F) to get
-additional information about at-risk responses. If M-CHAT-R/F score remains at 2 or
-higher, the child has screened positive. Action required: refer child for diagnostic
-evaluation and eligibility evaluation for early intervention. If score on Follow-Up is 0-1,
-child has screened negative. No further action required unless surveillance indicates risk
-for ASD. Child should be rescreened at future well-child visits
+  <strong>Total Score is 3-7</strong> Administer the Follow-Up (second stage of M-CHAT-R/F) to get additional information about at-risk
+  responses. If M-CHAT-R/F score remains at 2 or higher, the child has screened positive. Action required: refer child for
+  diagnostic evaluation and eligibility evaluation for early intervention. If score on Follow-Up is 0-1, child has screened
+  negative. No further action required unless surveillance indicates risk for ASD. Child should be rescreened at future well-child
+  visits
 </div>
 <div *ngIf="score >=8 && score <=20" class="alert alert-danger">
-  <strong>Total Score is 8-20</strong>  It is acceptable to bypass the Follow-Up and refer immediately for
-  diagnostic evaluation and eligibility evaluation for early intervention
+  <strong>Total Score is 8-20</strong> It is acceptable to bypass the Follow-Up and refer immediately for diagnostic evaluation and
+  eligibility evaluation for early intervention
 </div>

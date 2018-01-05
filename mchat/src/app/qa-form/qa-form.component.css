@@ -1,0 +1,15 @@
+.blue-circle{
+    color: white;
+    background-color: #dd2476;
+    border-radius: 50%;
+    text-align: center;
+    height: 30px;
+    width:30px;
+    margin: auto;
+    line-height: 30px;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

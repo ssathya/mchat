@@ -13,10 +13,12 @@ export class QaFormComponent implements OnInit {
   public answeredQuestions:number;
   public showAlert : boolean;
   public score : number;
+  public showQuestions : number;
   constructor(formService:QaFormServiceService) {
     this.questAndAns=formService.BuildQA();
     this.answeredQuestions=0;
     this.showAlert=false;
+    this.showQuestions=0;
     this.score=23;
    }
 
@@ -41,6 +43,16 @@ export class QaFormComponent implements OnInit {
          this.score--;
        }
      }     
+   }
+   public ToggleQuestions(){
+     this.showQuestions = this.showQuestions === 0? 1:0;
+     if (this.showQuestions ===0){
+      this.score=23;
+      this.answeredQuestions = 0;
+      for(var i = 0; i < this.questAndAns.length;i++){
+        this.questAndAns[i].ResponseAnswer=Answers.Undefined;
+      }
+     }
    }
   ngOnInit() {
   }

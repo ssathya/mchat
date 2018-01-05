@@ -46,13 +46,6 @@ export class QaFormComponent implements OnInit {
    }
    public ToggleQuestions(){
      this.showQuestions = this.showQuestions === 0? 1:0;
-     if (this.showQuestions ===0){
-      this.score=23;
-      this.answeredQuestions = 0;
-      for(var i = 0; i < this.questAndAns.length;i++){
-        this.questAndAns[i].ResponseAnswer=Answers.Undefined;
-      }
-     }
    }
   ngOnInit() {
   }

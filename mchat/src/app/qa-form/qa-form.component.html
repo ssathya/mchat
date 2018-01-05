@@ -27,12 +27,12 @@
               </td>
               <td>
                 <label>
-                  <input class="radio" type="radio" name={{i}} id={{i}} value="1" (change)="radioChangeHandler($event)">
+                  <input class="radio" type="radio" name={{i}} id={{i}} value="1" [checked]="qa.ResponseAnswer===1" (change)="radioChangeHandler($event)">
                 </label>
               </td>
               <td>
                 <label>
-                  <input class="radio" type="radio" name={{i}} id={{i}} value="0" (change)="radioChangeHandler($event)">
+                  <input class="radio" type="radio" name={{i}} id={{i}} value="0" [checked]="qa.ResponseAnswer===0" (change)="radioChangeHandler($event)">
                 </label>
               </td>
             </tr>

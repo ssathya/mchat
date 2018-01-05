@@ -41,6 +41,10 @@
       </div>
       <button [disabled]="answeredQuestions !== 23" class="btn btn-primary btn-xm pull-right" (click)="Evaluate()">Submit
       </button>
+      &nbsp;
+      <button class="btn btn-warning btn-xm" (click)="clearInput()">Clear
+      </button>
+      &nbsp;
       <br/>
       <br/>
       <div *ngIf="score >=0 && score <=2" class="alert alert-success">

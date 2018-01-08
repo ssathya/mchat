@@ -18,7 +18,7 @@
               <td>
                 <div class="row">
                   <div class="col-xs-1">
-                    <h5 class="blue-circle">{{i+1}}</h5>
+                    <h5 class="number-circle">{{i+1}}</h5>
                   </div>
                   <div class="col-xs-11">
                     <strong class="vcenter">{{qa.Question}}</strong>
@@ -39,15 +39,18 @@
           </tbody>
         </table>
       </div>
-      <button [disabled]="answeredQuestions !== 23" class="btn btn-primary btn-xm pull-right" (click)="Evaluate()">Submit
+      <button [popover]="myPopover" [disabled]="answeredQuestions !== 23" class="btn btn-primary btn-xm pull-right" (click)="Evaluate();ToggleQuestions()">Submit
       </button>
       &nbsp;
       <button class="btn btn-warning btn-xm" (click)="clearInput()">Clear
       </button>
-      &nbsp;
+      <button class="btn btn-primary btn-xm" (click)="allGood()">All Good
+      </button>
+      &nbsp;      
       <br/>
       <br/>
-      <div *ngIf="score >=0 && score <=2" class="alert alert-success">
+
+      <!-- <div *ngIf="score >=0 && score <=2" class="alert alert-success">
         <strong>Total score is 0-2</strong> if child is younger than 24 months, screen again after second birthday. No further action
         required unless surveillance indicates risk for ASD
       </div>
@@ -61,7 +64,47 @@
       <div *ngIf="score >=8 && score <=20" class="alert alert-danger">
         <strong>Total Score is 8-20</strong> It is acceptable to bypass the Follow-Up and refer immediately for diagnostic evaluation
         and eligibility evaluation for early intervention
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
+
+<div *ngIf="score >=0 && score <=2" class="alert alert-success">
+  <strong>Total score is 0-2</strong> if child is younger than 24 months, screen again after second birthday. No further action
+  required unless surveillance indicates risk for ASD
+</div>
+<div *ngIf="score >=3 && score <=7" class="alert alert-warning">
+  <strong>Total Score is 3-7</strong> Administer the Follow-Up (second stage of M-CHAT-R/F) to get additional information about
+  at-risk responses. If M-CHAT-R/F score remains at 2 or higher, the child has screened positive. Action required:
+  refer child for diagnostic evaluation and eligibility evaluation for early intervention. If score on Follow-Up is
+  0-1, child has screened negative. No further action required unless surveillance indicates risk for ASD. Child should
+  be rescreened at future well-child visits
+</div>
+<div *ngIf="score >=8 && score <=20" class="alert alert-danger">
+  <strong>Total Score is 8-20</strong> It is acceptable to bypass the Follow-Up and refer immediately for diagnostic evaluation
+  and eligibility evaluation for early intervention
+</div>
+
+<!--*ngIf="i ===15"-->
+<!-- <div style="align-content: center">
+    
+    <popover-content #myPopover title="Evaluation Result" placement="auto left" [animation]="true" [closeOnClickOutside]="true">
+      <div *ngIf="score >=0 && score <=2" style="background-color: rgb(223,240,216); color:rgb(60,118,61)">
+        <b>Total score is 0-2</b>
+        Test 1
+      </div>
+      <div *ngIf="score >=3 && score <=7" style="background-color: rgb(252,248,227); color:rgb(138,109,59)">
+        <b>Total Score is 3-7</b>
+        <br/>Administer the Follow-Up (second stage of M-CHAT-R/F) to get additional information about at-risk responses.
+        If M-CHAT-R/F score remains at 2 or higher, the child has screened positive. Action required: refer child for
+        diagnostic evaluation and eligibility evaluation for early intervention. If score on Follow-Up is 0-1, child
+        has screened negative. No further action required unless surveillance indicates risk for ASD. Child should be
+        rescreened at future well-child visits.
+      </div>
+      <div *ngIf="score >=8 && score <=20" style="background-color: rgb(242, 222, 222);color:rgb(169,68,66)">
+        <b>Total Score is 8-20</b>
+        <br/> It is acceptable to bypass the Follow-Up and refer immediately for diagnostic evaluation and eligibility evaluation
+        for early intervention.
+      </div>
+    </popover-content>
+  </div> -->

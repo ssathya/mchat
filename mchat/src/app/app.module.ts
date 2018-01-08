@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {AlertModule} from 'ngx-bootstrap';
 import {QaTemplate} from './qa-template';
 import {QaFormServiceService} from './qa-form-service.service';
+import {PopoverModule} from "ngx-popover";
 
 
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { MatTab } from '@angular/material/tabs/typings/tab';
     BrowserModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    PopoverModule
   ],
   providers: [QaFormServiceService],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { QaFormServiceService } from './../qa-form-service.service';
 import { QaTemplate, Answers } from './../qa-template';
 import { Component, OnInit } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
+import {PopoverModule} from "ngx-popover";
 
 @Component({
   selector: 'app-qa-form',
@@ -52,6 +53,15 @@ export class QaFormComponent implements OnInit {
       this.questAndAns[i].ResponseAnswer = Answers.Undefined;
     }
   }
+  public allGood(){
+    this.score = 23;
+    this.answeredQuestions=0;
+    for (var i = 0; i < this.questAndAns.length; i++) {
+      this.questAndAns[i].ResponseAnswer = Answers.Yes;
+    }
+    this.answeredQuestions = 23;
+  }
+  
   ngOnInit() {
   }
 

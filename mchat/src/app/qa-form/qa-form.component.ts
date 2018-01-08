@@ -46,6 +46,7 @@ export class QaFormComponent implements OnInit {
   }
   public ToggleQuestions() {
     this.showQuestions = this.showQuestions === 0 ? 1 : 0;
+    this.score = 23;
   }
   public clearInput() {
     this.score = 23;

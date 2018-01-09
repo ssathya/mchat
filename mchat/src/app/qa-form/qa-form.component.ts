@@ -1,8 +1,8 @@
 import { QaFormServiceService } from './../qa-form-service.service';
 import { QaTemplate, Answers } from './../qa-template';
 import { Component, OnInit } from '@angular/core';
-import { MatTabsModule } from '@angular/material/tabs';
-import {PopoverModule} from "ngx-popover";
+
+
 
 @Component({
   selector: 'app-qa-form',
@@ -35,7 +35,7 @@ export class QaFormComponent implements OnInit {
     else {
       this.questAndAns[id].ResponseAnswer = Answers.Yes;
     }
-    //     console.log(event);
+    
   }
   public Evaluate() {
     for (var i = 0; i < this.questAndAns.length; i++) {

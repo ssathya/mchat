@@ -39,13 +39,13 @@
           </tbody>
         </table>
       </div>
-      <button [disabled]="answeredQuestions !== 23" class="btn btn-primary btn-xm pull-right" (click)="ToggleQuestions(); Evaluate()">Submit
+      <button [disabled]="answeredQuestions !== 23" class="btn btn-xm pull-right" style="background-color: #dd2476;color: white;" (click)="ToggleQuestions(); Evaluate()">Submit
       </button>
       &nbsp;
-      <button class="btn btn-warning btn-xm" (click)="clearInput()">Clear
+      <button class="btn btn-xm" style="background-color: #6a52a2;color:white;" (click)="clearInput()">Clear
       </button>
-      <button class="btn btn-primary btn-xm" (click)="allGood()">All Good
-      </button>
+      <!-- <button class="btn btn-primary btn-xm" (click)="allGood()">All Good
+      </button> -->
       &nbsp;
       <br/>
       <br/>

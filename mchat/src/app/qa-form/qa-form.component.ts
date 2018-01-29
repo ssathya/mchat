@@ -2,8 +2,6 @@ import { QaFormServiceService } from './../qa-form-service.service';
 import { QaTemplate, Answers } from './../qa-template';
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-qa-form',
   templateUrl: './qa-form.component.html',
